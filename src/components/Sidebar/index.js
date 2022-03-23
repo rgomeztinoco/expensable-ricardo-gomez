@@ -1,15 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import ICONS from "../Icons";
-import SidebarItem from "./SidebarItem";
+import SidebarNavigation from "./SidebarNavigation";
 
-function SideBar({ currentPage, handlePageChange }) {
-  const navigation = [
-    { name: "Categories", icon: "categoryIcon", href: "#" },
-    { name: "Transactions", icon: "transactionIcon", href: "#" },
-    { name: "Budgets", icon: "budgetIcon", href: "#" },
-  ];
-
+function SideBar() {
   const sidebarStyles = css`
     min-height: 100vh;
     min-width: 200px;
@@ -22,20 +15,9 @@ function SideBar({ currentPage, handlePageChange }) {
   `;
 
   return (
-    <nav css={sidebarStyles}>
-      {navigation.map((item) => (
-        <SidebarItem
-          href={item.href}
-          icon={ICONS[item.icon]}
-          current={currentPage === item.name}
-          key={item.name}
-          handlePageChange={handlePageChange}
-          pageName={item.name}
-        >
-          {item.name}
-        </SidebarItem>
-      ))}
-    </nav>
+    <aside css={sidebarStyles}>
+      <SidebarNavigation />
+    </aside>
   );
 }
 

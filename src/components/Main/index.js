@@ -1,16 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-function Main({ page }) {
+function Main({ page, children }) {
   const mainStyles = css`
+    width: 100%;
     padding: 2rem;
   `;
 
-  return (
-    <div css={mainStyles}>
-      <h2>{page}</h2>
-    </div>
-  );
+  return <main css={mainStyles}>{children}</main>;
 }
 
 export default Main;

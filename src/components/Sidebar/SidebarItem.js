@@ -1,15 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { NavLink } from "react-router-dom";
 
-function SidebarItem({
-  href = "#",
-  current = false,
-  icon,
-  children,
-  handlePageChange,
-  pageName,
-  ...otherProps
-}) {
+function SidebarItem({ href = "#", icon, children }) {
   const sidebarItemStyles = css`
     padding: 0.5rem;
     display: flex;
@@ -31,25 +24,22 @@ function SidebarItem({
     }
   `;
 
-  const activeItemStyle = css`
-    background-color: var(--pink-400);
-    color: white;
-    &:hover {
-      background-color: var(--pink-500);
-    }
-  `;
-
   return (
-    <a
-      href={href}
-      css={[sidebarItemStyles, current ? activeItemStyle : null]}
-      onClick={handlePageChange}
-      data-page-name={pageName}
-      {...otherProps}
+    <NavLink
+      to={href}
+      css={sidebarItemStyles}
+      style={({ isActive }) => {
+        if (isActive) {
+          return {
+            backgroundColor: "var(--pink-400)",
+            color: "white",
+          };
+        }
+      }}
     >
       {icon}
-      {children}
-    </a>
+      <span>{children}</span>
+    </NavLink>
   );
 }
 
