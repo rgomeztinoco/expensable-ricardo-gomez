@@ -1,3 +1,8 @@
+import { BsFillCartFill } from "react-icons/bs";
+import { RiBankFill, RiBillFill, RiCarFill, RiGiftFill } from "react-icons/ri";
+import { GiHealthNormal } from "react-icons/gi";
+import { FaGamepad, FaGraduationCap } from "react-icons/fa";
+
 const ICONS = {
   mailIcon: (
     <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -54,6 +59,14 @@ const ICONS = {
       />
     </svg>
   ),
+  bank: <RiBankFill />,
+  cart: <BsFillCartFill />,
+  health: <GiHealthNormal />,
+  game: <FaGamepad />,
+  bill: <RiBillFill />,
+  car: <RiCarFill />,
+  education: <FaGraduationCap />,
+  gift: <RiGiftFill />,
 };
 
 export default ICONS;
