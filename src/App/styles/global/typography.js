@@ -18,7 +18,7 @@ const typography = css`
     font-size: 1rem;
     line-height: 1.5rem;
     font-family: var(--font-primary);
-    color: var(--gray-400);
+    color: var(--gray-900);
   }
 
   .heading,
@@ -54,22 +54,22 @@ const typography = css`
     line-height: 1.75rem;
   }
 
-  .content-xl {
+  .content--xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
 
-  .content-lg {
+  .content--lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
 
-  .content-sm {
+  .content--sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
 
-  .content-xs {
+  .content--xs {
     font-size: 0.75rem;
     line-height: 1rem;
   }
