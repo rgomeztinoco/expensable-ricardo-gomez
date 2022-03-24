@@ -37,7 +37,10 @@ function App() {
         <Main page={currentPage}>
           <Routes>
             <Route index element={<Navigate to="categories" />} />
-            <Route path="/categories" element={<CategoriesPage />}>
+            <Route
+              path="/categories"
+              element={<CategoriesPage {...{ setCategoriesType }} />}
+            >
               <Route index element={<Navigate to={categoriesType} />} />
               <Route path="expense" element={<Categories type="expense" />} />
               <Route path="income" element={<Categories type="income" />} />
